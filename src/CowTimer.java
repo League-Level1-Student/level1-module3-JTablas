@@ -10,6 +10,11 @@ import java.io.IOException;
 import javax.swing.JApplet;
 
 public class CowTimer {
+	String time;
+	public CowTimer(String time){
+	this.time=time;	
+	}
+	
 	/*
 	 * This is an advanced recipe. There may be more than one line of code for
 	 * each instruction.
@@ -18,7 +23,10 @@ public class CowTimer {
 
 	public static void main(String[] args) throws InterruptedException {
 		/* 1. Make a CowTimer, set the time and start it. */
-
+		CowTimer cowtime = new CowTimer("10");
+		cowtime.setTime(1);
+		cowtime.start();
+		cowtime.playSound("moo.wav");
 	}
 
 	private int minutes;
@@ -26,6 +34,7 @@ public class CowTimer {
 	public void setTime(int minutes) {
 		this.minutes = minutes;
 		System.out.println("Cow set to " + minutes + " minutes.");
+		
 	}
 
 	public void start() throws InterruptedException {
@@ -33,13 +42,18 @@ public class CowTimer {
 		 * 2. Count down the minutes, print the current minute then sleep for 60
 		 * seconds using Thread.sleep(int milliseconds).
 		 */
-
+		for (int i = minutes; i > 0; i--) {
+			
+		
+		System.out.println(minutes + " minutes");
+		Thread.sleep(6000);
+		minutes--;
+		}
 		/*
 		 * 3. When the timer is finished, use the playSound method to play a moo
 		 * sound. You can use the .wav file in the default package, or you can download 
-		 * one from freesound.org, then drag it intothe default package. 
+		 * one from freesound.org, then drag it in to the default package. 
 		 */
-
 	}
 
 	private void playSound(String fileName) {
@@ -56,6 +70,4 @@ private void speak(String stuffToSay) {
 		}
 	}
 
-
 }
-

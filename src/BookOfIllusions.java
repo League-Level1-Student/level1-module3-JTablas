@@ -33,6 +33,7 @@ public class BookOfIllusions extends MouseAdapter {
 	private void createBook() {
 		// 2. make the frame visible
 		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// 3. set the size of the frame
 		frame.setSize(600, 600);
 		// 4. find 2 images and save them to your project's default package
