@@ -35,7 +35,7 @@ public class SimonSays extends KeyAdapter {
  		images.put(new Integer(KeyEvent.VK_LEFT), "Gary.jpg");
  		images.put(new Integer(KeyEvent.VK_RIGHT), "fortune teller.png");
  // 3. Tell the user to "Press the matching key when 'Simon says' otherwise press a different key"
- JOptionPane.showInputDialog("Press the matching key when 'Simon says' otherwise press a different key");
+ JOptionPane.showMessageDialog(null,"Press the matching key when 'Simon says' otherwise press a different key");
  // 4. call the method to show an image
  showImage();
  	}
@@ -58,17 +58,19 @@ public class SimonSays extends KeyAdapter {
 	}
 	private void showImage() {
     	//5. initialize your frame to a new JFrame()
+		frame= new JFrame();
 		frame.setVisible(true);
     	//6. set the frame to visible
 		
   	 //frame.add(getNextRandomImage()); //7. rename to the name of your frame
 		frame.add(getNextRandomImage());
     	// 8. set the size of the frame 
-     	frame.setSize(400, 400);
+     	frame.setSize(500, 800);
     	// 9. add a key listener to the frame
 	frame.addKeyListener(this);
    	 //10. Use the speak method to either say "Simon says press this key" or "Press this key"
     	//Hint: use the simonSays int and a random number
+	
 	speak("Simon says press the UP key");
 	}
 	private Component getNextRandomImage() {
