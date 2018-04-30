@@ -3,8 +3,6 @@
  *    Level 1
  */
 
-
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -38,5 +36,4 @@ public class NetflixQueue {
 			System.out.println(movie);
 		}
 	}
-
 }

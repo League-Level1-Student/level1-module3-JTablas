@@ -67,9 +67,17 @@ public class Jeopardy implements ActionListener {
 		secondButton = createButton("$400");
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
+		
+		thirdButton = createButton("$600");
+		quizPanel.add(thirdButton);
+		
+		fourthButton = createButton("$800");
+		quizPanel.add(fourthButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
 		firstButton.addActionListener(this);
 		secondButton.addActionListener(this);
+		thirdButton.addActionListener(this);
+		fourthButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
 		
 		frame.pack();
@@ -102,23 +110,36 @@ public class Jeopardy implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 
 		// Use the method that plays the jeopardy theme music.
-
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
 		if(buttonPressed==firstButton){
 		askQuestion("What has a face and hands, but no legs or arms?", "Clock", 200);	
-		
+		firstButton.setText(null);
 		}
 			// Call the askQuestion() method
 			
 			// Fill in the askQuestion() method. When you play the game, the score should change.
 		
 		// Or if the buttonPressed was the secondButton
-
+		if(buttonPressed==secondButton){
 
 			// Call the askQuestion() method with a harder question
-			
+		askQuestion("What is the one thing that is yours, yet used more by others?", "Your name", 400);	
+		secondButton.setText(null);
+		}
+		if(buttonPressed==thirdButton){
+
+			// Call the askQuestion() method with a harder question
+		askQuestion("WHY DON'T YOU LOVE ME?", "...", 600);	
+		thirdButton.setText(null);
 		
+		if(buttonPressed==thirdButton){
+
+			// Call the askQuestion() method with a harder question
+		askQuestion("What is 10+10+10+10+10-50+3.4?", "3.4", 800);	
+		fourthButton.setText(null);
+		}
+		}
 		// Clear the button text (set the button text to nothing)
 		
 	}
