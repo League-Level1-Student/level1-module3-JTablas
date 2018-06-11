@@ -71,7 +71,7 @@ public class SimonSays extends KeyAdapter {
    	 //10. Use the speak method to either say "Simon says press this key" or "Press this key"
     	//Hint: use the simonSays int and a random number
 	
-	speak("Simon says press the UP key");
+	//speak("Simon says press the " + simonSays + " key");
 	}
 	private Component getNextRandomImage() {
     	this.imageIndex = new Random().nextInt(4) + 37;
